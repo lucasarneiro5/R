@@ -76,3 +76,80 @@ summary(cargaHoraria)
 
 CargaHoraria <- as.factor(cargaHoraria)
 summary(CargaHoraria)
+
+
+#--------------------------------------
+# 4) LOOPS 
+# Criando um dataframe para trabalhar
+idades<-c(25,30,24,29,31,12)
+nomes<-c("Joao", "Caina", "Maria", "Leo", "Lia", "Enzo")
+df <- data.frame(nomes,idades)
+df
+
+# Condicional IF
+if (5 == 5) 6 + 6
+if (5 == 6) 6 + 6 else "Condiçao nao atendida"
+if (5 == 6){
+  6+6
+} else {
+  "Condição nao atendida"
+  }
+
+if(df$idades[df$nomes=="Joao"]> df$idades[df$nomes=="Caina"]){
+  "Mais velho: Joao"
+} else {
+  "Mais velho: Caina"
+}
+
+#-------
+# FOR
+for (i in idades){
+  print(i)
+}
+
+v <- 0
+for (i in df$idades){
+  if (i > v) {v <- i}
+}
+df$nomes[df$idades == v]
+
+#-------
+# WHILE: Enquanto é verdade, faça isso
+x <- 0
+while(x < 10){
+  print(x)
+  x <- x+1
+}
+
+# Ex. que permite somar as idades até que fiquem menor do que 100
+y <- 0
+x <- 0
+cont <- 0
+idades100 <- 0
+while (y <- 100){
+  cont <- cont+1
+  idades100[cont] <- idades[cont]
+  x <- x+idades[cont]
+  y<-x+idades[cont+1]
+}
+
+idades
+idades100
+sum(idades100)
+
+
+
+#--------------------------------------
+# 5) FUNÇÕES
+soma <- function(y){
+  x<-0
+  for (i in y){
+    x <- x + i
+  }
+  print(x)
+}
+# Aplicando a funçao para a lista 'a' e 'b'
+a <- c(423,464,69,519,123,258)
+b <- c(51,36,123,98,23,37,63,3)
+soma(a)
+soma(b)
