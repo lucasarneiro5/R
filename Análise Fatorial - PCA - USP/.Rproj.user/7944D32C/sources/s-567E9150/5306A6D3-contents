@@ -1,0 +1,21 @@
+# Extraindo as Cargas Fatoriais
+k <- 4 #número de variáveis presentes na base de dados
+cargas_fatoriais <- afpc$rotation[, 1:k] %*% diag(afpc$sdev[1:k])
+rowSums(cargas_fatoriais^2)
+
+load("pca_arquivo02.RData")
+summary(pca_arquivo02)
+notasfatorial_std <- pca_arquivo02 %>% 
+  data.frame()
+#Calculando a variância compartilhada
+var_compartilhada <- (afpc$sdev ^ 2/sum(afpc$sdev ^ 2))
+var_compartilhada
+
+load("pca_arquivo01.RData")
+summary(pca_arquivo01)
+
+load("rho_arquivo01.RData")
+rho_arquivo01.RData
+
+load("pca_arquivo03.RData")
+summary(pca_arquivo03)
